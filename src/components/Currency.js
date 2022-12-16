@@ -3,10 +3,10 @@ import { AppContext } from '../context/AppContext';
 
 
 const Currency = () => {
-    const { currency, dispatch } = useContext(AppContext);
-
+    const {currency, dispatch } = useContext(AppContext);
+ 
    
-    const handleChange = (e) => {
+    const setCurrency = (e) => {
         dispatch({
             type: 'CHG_CURRENCY',
             payload: e.target.value,
@@ -15,11 +15,11 @@ const Currency = () => {
     return (
         <div className='alert alert-secondary'>
             <div >
-            <select  style={{background : 'green'}} class="select ">
-                    <option value="dollar">$ Dollar</option>
-                    <option value="pound">Two</option>
-                    <option value="euro">Three</option>
-                    <option value="ruppee">Four</option>
+            <select value={currency} id="currency"  onChange={(e)=>setCurrency(e)} style={{background : 'green'}} class="select ">
+                    <option value="$">$ Dollar</option>
+                    <option value="£">£ Pound</option>
+                    <option value="€">€ Euro</option>
+                    <option value="₹">₹ Ruppee</option>
                 </select>
             </div>
 
